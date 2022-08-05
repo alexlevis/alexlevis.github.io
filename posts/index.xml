@@ -4,12 +4,12 @@
         <link>https://alexlevis.github.io/posts/</link>
         <description>All Posts | Alex Levis</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>alex.w.levis@gmail.com (Alex Levis)</managingEditor>
-            <webMaster>alex.w.levis@gmail.com (Alex Levis)</webMaster><lastBuildDate>Wed, 03 Aug 2022 00:00:00 -0400</lastBuildDate><atom:link href="https://alexlevis.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>alex.w.levis@gmail.com (Alex Levis)</webMaster><lastBuildDate>Fri, 05 Aug 2022 00:00:00 -0400</lastBuildDate><atom:link href="https://alexlevis.github.io/posts/" rel="self" type="application/rss+xml" /><item>
     <title>MGFs, power series, and pushing the expectation through</title>
-    <link>https://alexlevis.github.io/power-series-subexponential/</link>
-    <pubDate>Wed, 03 Aug 2022 00:00:00 -0400</pubDate>
+    <link>https://alexlevis.github.io/mgf-bounds/</link>
+    <pubDate>Fri, 05 Aug 2022 00:00:00 -0400</pubDate>
     <author>Alex Levis</author>
-    <guid>https://alexlevis.github.io/power-series-subexponential/</guid>
+    <guid>https://alexlevis.github.io/mgf-bounds/</guid>
     <description><![CDATA[I got stuck on what I thought was a simple point while working through a stats textbook! I figured it out, I think, but was this the most straightforward path to understanding? You tell me! In this note, we explore some oft-used facts about moment-generating functions, and explain a connection with tail and concentration inequalities.
 Overview and my confusion I am currently reading through Martin Wainwright&rsquo;s High-dimensional statistics: A non-asymptotic viewpoint, to fill some gaps in my stat theory knowledge.]]></description>
 </item>
