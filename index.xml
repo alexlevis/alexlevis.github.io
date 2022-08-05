@@ -1,18 +1,19 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Academic Website and Blog of Alex Levis</title>
+        <title>Alex Levis</title>
         <link>https://alexlevis.github.io/</link>
         <description>Welcome!</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>alex.w.levis@gmail.com (Alex Levis)</managingEditor>
-            <webMaster>alex.w.levis@gmail.com (Alex Levis)</webMaster><lastBuildDate>Mon, 18 Jul 2022 00:00:00 -0400</lastBuildDate>
+            <webMaster>alex.w.levis@gmail.com (Alex Levis)</webMaster><lastBuildDate>Wed, 03 Aug 2022 00:00:00 -0400</lastBuildDate>
             <atom:link href="https://alexlevis.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
-    <title>TODO: An introduction to instrumental variables</title>
-    <link>https://alexlevis.github.io/iv-intro/</link>
-    <pubDate>Mon, 18 Jul 2022 00:00:00 -0400</pubDate>
+    <title>MGFs, power series, and pushing the expectation through</title>
+    <link>https://alexlevis.github.io/power-series-subexponential/</link>
+    <pubDate>Wed, 03 Aug 2022 00:00:00 -0400</pubDate>
     <author>Alex Levis</author>
-    <guid>https://alexlevis.github.io/iv-intro/</guid>
-    <description><![CDATA[A focus of my postdoctoral research is on using instrumental variables for causal inference. There is a large literature in economics and epidemiology on this topic, but much of the terminology is scattered, and the underlying causal and statistical frameworks vary from place to place. My goal in this post is to give an overview of the salient features of an instrumental variable (IV), and discuss when (and perhaps how) IVs can be used to aid in causal inference research.]]></description>
+    <guid>https://alexlevis.github.io/power-series-subexponential/</guid>
+    <description><![CDATA[I got stuck on what I thought was a simple point while working through a stats textbook! I figured it out, I think, but was this the most straightforward path to understanding? You tell me! In this note, we explore some oft-used facts about moment-generating functions, and explain a connection with tail and concentration inequalities.
+Overview and my confusion I am currently reading through Martin Wainwright&rsquo;s High-dimensional statistics: A non-asymptotic viewpoint, to fill some gaps in my stat theory knowledge.]]></description>
 </item>
 </channel>
 </rss>
