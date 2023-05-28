@@ -32,7 +32,7 @@ Overview and my confusion I am currently reading through Martin Wainwright&rsquo
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/alexlevis.github.io\/mgf-bounds\/"
-        },"genre": "posts","keywords": "probability","wordcount":  2081 ,
+        },"genre": "posts","keywords": "probability","wordcount":  2090 ,
         "url": "https:\/\/alexlevis.github.io\/mgf-bounds\/","datePublished": "2022-08-05T00:00:00-04:00","dateModified": "2022-08-05T00:00:00-04:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -106,7 +106,7 @@ Overview and my confusion I am currently reading through Martin Wainwright&rsquo
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">MGFs, power series, and pushing the expectation through</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Alex Levis</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-08-05">2022-08-05</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;2081 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2022-08-05">2022-08-05</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;2090 words&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;10 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
@@ -158,7 +158,7 @@ proving that this condition implies that \(X\) is sub-exponential, the
 author employs the &ldquo;<a href="https://en.wikipedia.org/wiki/Power_series" target="_blank" rel="noopener noreffer ">power series</a> decomposition&rdquo; \(\mathbb{E}(e^{t(X-
 \mu)}) = \sum_{n = 0}^\infty \frac{t^n}{n!}  \mathbb{E}[(X-\mu)^n]\),
 for \(t\) non-zero but sufficiently small. That said, I couldn&rsquo;t find
-anywhere in the book that justified this equality.</p>
+anywhere in the book where this equality was justified.</p>
 <p>At first glance, this equality might seem obvious, as \(e^{z} =
 \sum_{n=0}^\infty \frac{z^n}{n!}\) for all \(z \in \mathbb{R}\), so one
 should just be able to push the expectation through this power series
@@ -205,7 +205,7 @@ formalized in the next result.
 <p><strong>Proposition 1</strong>: Suppose \(t^* &gt; 0\) is such that \((-t^*, t^*) \subseteq
 D\). Then \(\mathbb{E}(|X|^n) &lt; \infty\), for all \(n \in \mathbb{N}\),
 \[\Psi_X(t) = \sum_{n = 0}^\infty \frac{t^n}{n!} \mathbb{E}(X^n)\]
-holds and is this series is absolutely convergent, for all \(t \in
+holds and this series is absolutely convergent, for all \(t \in
 (-t^*, t^*)\). Consequently, \(\mathbb{E}(X^n) = \left. \frac{d^n}{dt^n}
 \Psi_X(t) \right|_{t = 0}\).</p>
 <p><em>Proof</em>: Let \(t \in (0, t^*)\). The key observation is that \(e^{t|x|}
@@ -258,9 +258,9 @@ Wainwright text, this is part of Theorem 2.13]. Clearly, if \(\nu &gt; 0\)
 and \(\alpha \in [0,\infty)\) satisfy \(\mathbb{E}(e^{t(X-\mu)}) \leq
 e^{\frac{\nu^2 t^2}{2}}\) (notice in particular that this is finite)
 for \(t \in (-\alpha^{-1}, \alpha^{-1})\), then \(D\) contains any pair
-\(\{-t, t\}\) for \(t \in (0, a^{-1})\), and we see that \((-\alpha^{-1},
-\alpha^{-1}) \subseteq D\). The following says that the converse result
-also holds.</p>
+\(\{-t, t\}\) for \(t \in (0, \alpha^{-1})\), and we see that
+\((-\alpha^{-1}, \alpha^{-1}) \subseteq D\). The following says that the
+converse result also holds.</p>
 <p><strong>Proposition 2</strong>: <em>The MGF of</em> \(X\) <em>is defined on</em> \(D \supseteq (-c,
 c)\) <em>for some</em> \(c &gt; 0\) <em>if and only if</em> \(X\) <em>is sub-exponential</em>.</p>
 <p><em>Proof</em>: We have just argued in the &ldquo;if&rdquo; direction. For the converse,
@@ -310,10 +310,11 @@ c)\) <em>for some</em> \(c &gt; 0\), <em>if and only if</em> \[\gamma \coloneqq 
 \to \infty} \left(\frac{\left|\mathbb{E}(X^n)\right|}{n!}\right)^{1/n}
 &lt; \infty.\]</p>
 <p><em>Proof</em>: By our theorem, \((-c, c) \subseteq D\) for some \(c &gt; 0\) if and
-only if the radius of convergence \(R\) of the power series
-\(\sum_{n=0}^\infty \frac{t^n}{n!}  \mathbb{E}(X^n)\) is positive. But
-\(R = \frac{1}{\gamma}\) by <a href="https://en.wikipedia.org/wiki/Cauchy%E2%80%93Hadamard_theorem" target="_blank" rel="noopener noreffer ">standard power series facts</a>, so we conclude
-that \(R &gt; 0\) if and only if \(\gamma &lt; \infty\). \(\quad \blacksquare\) <br />
+only if \(X^n \in L_1\) for all \(n \in \mathbb{N}\) and the radius of
+convergence \(R\) of the power series \(\sum_{n=0}^\infty \frac{t^n}{n!}
+\mathbb{E}(X^n)\) is positive. But \(R = \frac{1}{\gamma}\) by <a href="https://en.wikipedia.org/wiki/Cauchy%E2%80%93Hadamard_theorem" target="_blank" rel="noopener noreffer ">standard
+power series facts</a>, so we conclude that \(R &gt; 0\) if and only if \(\gamma
+&lt; \infty\). \(\quad \blacksquare\) <br />
 <br />
 With this result in hand, we can more easily see that the Bernstein
 condition implies the sub-exponential property. Indeed, if \(X\) is
@@ -391,7 +392,7 @@ everything together, we have \(\mathbb{E}(e^{|t| \cdot |X-\mu|}) &lt;
 </article></div>
             </main><footer class="footer">
         <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.101.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
-                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2019 - 2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Alex Levis</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2019 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Alex Levis</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>
 
