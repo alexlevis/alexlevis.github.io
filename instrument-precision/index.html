@@ -30,7 +30,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/alexlevis.github.io\/instrument-precision\/"
-        },"genre": "posts","keywords": "causality","wordcount":  2006 ,
+        },"genre": "posts","keywords": "causality","wordcount":  2033 ,
         "url": "https:\/\/alexlevis.github.io\/instrument-precision\/","datePublished": "2024-04-29T00:00:00-04:00","dateModified": "2024-04-29T00:00:00-04:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -104,7 +104,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">A note on instruments and precision variables</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Alex Levis</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-04-29">2024-04-29</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;2006 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-04-29">2024-04-29</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;2033 words&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;10 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
@@ -312,42 +312,46 @@ A\right)\right) = \mathbb{E}\left(
 <p>Note that observations 2. and 3. follow from observation 1. The result
 then follows immediately. \(\quad \blacksquare\) <br />
 <br /></p>
+<p>In the following subsections, we write instruments and precision
+variables using bold symbols, \(\boldsymbol{Z}\) and \(\boldsymbol{W}\),
+to reflect that these can be collections (i.e., vectors) of
+covariates.</p>
 <h2 id="do-not-adjust-for-instruments"><em>Do not</em> adjust for instruments!</h2>
 <p><strong>Lemma 2</strong>: (Adapted from Lemma 5 in <a href="https://www.jmlr.org/papers/volume21/19-1026/19-1026.pdf" target="_blank" rel="noopener noreffer ">Rotnitzky &amp; Smucler (2020)</a>) <br /></p>
-<p>Suppose \(Z \perp\!\!\!\!\perp Y \mid \boldsymbol{L}, A\). Then
-\(\mathrm{Var}(\phi_{\boldsymbol{L}, Z}) \geq
+<p>Suppose \(\boldsymbol{Z} \perp\!\!\!\!\perp Y \mid \boldsymbol{L},
+A\). Then \(\mathrm{Var}(\phi_{\boldsymbol{L}, \boldsymbol{Z}}) \geq
 \mathrm{Var}(\phi_{\boldsymbol{L}})\).</p>
 <p><em>Proof</em>: Note that under the stated conditional independence
-assumption, \(\mu_{a,\boldsymbol{L}, Z} \equiv \mu_{a,\boldsymbol{L}}\)
-and \(\sigma_{a, \boldsymbol{L}, Z}^2 \equiv \sigma_{a,
+assumption, \(\mu_{a,\boldsymbol{L}, \boldsymbol{Z}} \equiv \mu_{a,\boldsymbol{L}}\)
+and \(\sigma_{a, \boldsymbol{L}, \boldsymbol{Z}}^2 \equiv \sigma_{a,
 \boldsymbol{L}}^2\).  We therefore have
-\[\mathbb{E}(\phi_{\boldsymbol{L}, Z} \mid \boldsymbol{L}, A, Y) =
+\[\mathbb{E}(\phi_{\boldsymbol{L}, \boldsymbol{Z}} \mid \boldsymbol{L}, A, Y) =
 \mu_{1, \boldsymbol{L}} - \mu_{0, \boldsymbol{L}} + (2A - 1)(Y -
 \mu_{A, \boldsymbol{L}})\mathbb{E}\left(\frac{1}{\pi_{A,
-\boldsymbol{L}, Z}} \mid \boldsymbol{L}, A \right),\] again using the
-fact that \(Z \perp\!\!\!\!\perp Y \mid \boldsymbol{L}, A\). Using Lemma
-3 below, we then have \(\mathbb{E}(\phi_{\boldsymbol{L}, Z} \mid
+\boldsymbol{L}, \boldsymbol{Z}}} \mid \boldsymbol{L}, A \right),\] again using the
+fact that \(\boldsymbol{Z} \perp\!\!\!\!\perp Y \mid \boldsymbol{L}, A\). Using Lemma
+3 below, we then have \(\mathbb{E}(\phi_{\boldsymbol{L}, \boldsymbol{Z}} \mid
 \boldsymbol{L}, A, Y) = \phi_{\boldsymbol{L}}\). Thus, by the law of
-total variance, \[\mathrm{Var}\left(\phi_{\boldsymbol{L}, Z}\right) =
+total variance, \[\mathrm{Var}\left(\phi_{\boldsymbol{L}, \boldsymbol{Z}}\right) =
 \mathrm{Var}\left(\phi_{\boldsymbol{L}}\right) +
-\mathbb{E}\left(\mathrm{Var}(\phi_{\boldsymbol{L}, Z} \mid
+\mathbb{E}\left(\mathrm{Var}(\phi_{\boldsymbol{L}, \boldsymbol{Z}} \mid
 \boldsymbol{L}, A, Y)\right) \geq
 \mathrm{Var}\left(\phi_{\boldsymbol{L}}\right).\] Explicitly, if you
-like, \[\mathbb{E}\left(\mathrm{Var}( \phi_{\boldsymbol{L}, Z} \mid
+like, \[\mathbb{E}\left(\mathrm{Var}( \phi_{\boldsymbol{L}, \boldsymbol{Z}} \mid
 \boldsymbol{L}, A, Y)\right) = \mathbb{E}\left(\sigma_{A,
 \boldsymbol{L}}^2 \cdot \mathrm{Var}\left(\frac{1}{\pi_{A,
-\boldsymbol{L}, Z}} \mid \boldsymbol{L}, A\right)\right),\] which is
+\boldsymbol{L}, \boldsymbol{Z}}} \mid \boldsymbol{L}, A\right)\right),\] which is
 certainly non-negative. \(\quad \blacksquare\) <br />
 <br /></p>
-<p><strong>Lemma 3</strong>: \(\mathbb{E}\left(\frac{1}{\pi_{A, \boldsymbol{L}, Z}} \mid
+<p><strong>Lemma 3</strong>: \(\mathbb{E}\left(\frac{1}{\pi_{A, \boldsymbol{L}, \boldsymbol{Z}}} \mid
 \boldsymbol{L}, A \right) = \frac{1}{\pi_{A, \boldsymbol{L}}}\).</p>
 <p><em>Proof</em>: For each \(a \in \{0,1\}\), observe that</p>
 <p>\begin{align*}
-\mathbb{E}\left(\frac{1}{\pi_{a, \boldsymbol{L}, Z}} \mid
+\mathbb{E}\left(\frac{1}{\pi_{a, \boldsymbol{L}, \boldsymbol{Z}}} \mid
 \boldsymbol{L}, A = a\right)\pi_{a, \boldsymbol{L}}
-&amp;= \mathbb{E}\left(\frac{I(A = a)}{\pi_{a, \boldsymbol{L}, Z}} \mid
+&amp;= \mathbb{E}\left(\frac{I(A = a)}{\pi_{a, \boldsymbol{L}, \boldsymbol{Z}}} \mid
 \boldsymbol{L}\right) \\
-&amp;= \mathbb{E}\left(\frac{\mathbb{E}(I(A = a) \mid \boldsymbol{L}, Z) }{\pi_{a, \boldsymbol{L}, Z}} \mid
+&amp;= \mathbb{E}\left(\frac{\mathbb{E}(I(A = a) \mid \boldsymbol{L}, \boldsymbol{Z}) }{\pi_{a, \boldsymbol{L}, \boldsymbol{Z}}} \mid
 \boldsymbol{L}\right) \\
 &amp;= 1,
 \end{align*}</p>
@@ -355,39 +359,39 @@ certainly non-negative. \(\quad \blacksquare\) <br />
 <br /></p>
 <h2 id="do-adjust-for-precision-variables"><em>Do</em> adjust for precision variables!</h2>
 <p><strong>Lemma 4</strong>: (Adapted from Lemma 4 in <a href="https://www.jmlr.org/papers/volume21/19-1026/19-1026.pdf" target="_blank" rel="noopener noreffer ">Rotnitzky &amp; Smucler (2020)</a>) <br /></p>
-<p>Suppose \(A \perp\!\!\!\!\perp W \mid \boldsymbol{L}\). Then
-\(\mathrm{Var}(\phi_{\boldsymbol{L}, W}) \leq
+<p>Suppose \(A \perp\!\!\!\!\perp \boldsymbol{W} \mid \boldsymbol{L}\). Then
+\(\mathrm{Var}(\phi_{\boldsymbol{L}, \boldsymbol{W}}) \leq
 \mathrm{Var}(\phi_{\boldsymbol{L}})\).</p>
 <p><em>Proof</em>: Note that under the stated conditional independence
-assumption, \(\pi_{A,\boldsymbol{L}, W} \equiv
+assumption, \(\pi_{A,\boldsymbol{L}, \boldsymbol{W}} \equiv
 \pi_{A,\boldsymbol{L}}\). Thus,</p>
 <p>\begin{align*}
 \phi_{\boldsymbol{L}}
-&amp;= \phi_{\boldsymbol{L}, W} +
+&amp;= \phi_{\boldsymbol{L}, \boldsymbol{W}} +
 \left(\frac{A}{\pi_{1, \boldsymbol{L}}} - 1\right)
-(\mu_{1, \boldsymbol{L}, W} - \mu_{1, \boldsymbol{L}}) -
+(\mu_{1, \boldsymbol{L}, \boldsymbol{W}} - \mu_{1, \boldsymbol{L}}) -
 \left(\frac{1 - A}{1 - \pi_{1, \boldsymbol{L}}} - 1\right)
-(\mu_{0, \boldsymbol{L}, W} - \mu_{0, \boldsymbol{L}})
+(\mu_{0, \boldsymbol{L}, \boldsymbol{W}} - \mu_{0, \boldsymbol{L}})
 \end{align*}</p>
-<p>Noting that, as \(A \perp\!\!\!\!\perp W \mid \boldsymbol{L}\),
+<p>Noting that, as \(A \perp\!\!\!\!\perp \boldsymbol{W} \mid \boldsymbol{L}\),
 \[\mathbb{E}\left(\left(\frac{A}{\pi_{1, \boldsymbol{L}}} - 1\right)
-(\mu_{1, \boldsymbol{L}, W} - \mu_{1, \boldsymbol{L}}) -
+(\mu_{1, \boldsymbol{L}, \boldsymbol{W}} - \mu_{1, \boldsymbol{L}}) -
 \left(\frac{1 - A}{1 - \pi_{1, \boldsymbol{L}}} - 1\right) (\mu_{0,
-\boldsymbol{L}, W} - \mu_{0, \boldsymbol{L}}) \mid \boldsymbol{L},
-W\right) = 0,\] it then follows that
-\[\mathrm{Cov}\left(\phi_{\boldsymbol{L}, W}, \left(\frac{A}{\pi_{1,
-\boldsymbol{L}}} - 1\right) (\mu_{1, \boldsymbol{L}, W} - \mu_{1,
+\boldsymbol{L}, \boldsymbol{W}} - \mu_{0, \boldsymbol{L}}) \mid \boldsymbol{L},
+\boldsymbol{W}\right) = 0,\] it then follows that
+\[\mathrm{Cov}\left(\phi_{\boldsymbol{L}, \boldsymbol{W}}, \left(\frac{A}{\pi_{1,
+\boldsymbol{L}}} - 1\right) (\mu_{1, \boldsymbol{L}, \boldsymbol{W}} - \mu_{1,
 \boldsymbol{L}}) - \left(\frac{1 - A}{1 - \pi_{1, \boldsymbol{L}}} -
-1\right) (\mu_{0, \boldsymbol{L}, W} - \mu_{0, \boldsymbol{L}})\right)
+1\right) (\mu_{0, \boldsymbol{L}, \boldsymbol{W}} - \mu_{0, \boldsymbol{L}})\right)
 = 0.\] Thus, we have</p>
 <p>\begin{align*}
 &amp; \mathrm{Var}(\phi_{\boldsymbol{L}}) \\
-&amp;= \mathrm{Var}(\phi_{\boldsymbol{L}, W}) +
+&amp;= \mathrm{Var}(\phi_{\boldsymbol{L}, \boldsymbol{W}}) +
 \mathrm{Var}\left(\left(\frac{A}{\pi_{1,
-\boldsymbol{L}}} - 1\right)(\mu_{1, \boldsymbol{L}, W} - \mu_{1, \boldsymbol{L}}) -
+\boldsymbol{L}}} - 1\right)(\mu_{1, \boldsymbol{L}, \boldsymbol{W}} - \mu_{1, \boldsymbol{L}}) -
 \left(\frac{1 - A}{1 - \pi_{1, \boldsymbol{L}}} - 1\right)
-(\mu_{0, \boldsymbol{L}, W} - \mu_{0, \boldsymbol{L}})\right) \\
-&amp; \geq \mathrm{Var}(\phi_{\boldsymbol{L}, W}),
+(\mu_{0, \boldsymbol{L}, \boldsymbol{W}} - \mu_{0, \boldsymbol{L}})\right) \\
+&amp; \geq \mathrm{Var}(\phi_{\boldsymbol{L}, \boldsymbol{W}}),
 \end{align*}</p>
 <p>as variance is non-negative. \(\quad \blacksquare\) <br />
 <br /></p>
