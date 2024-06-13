@@ -10,7 +10,7 @@
     <pubDate>Mon, 29 Apr 2024 00:00:00 -0400</pubDate>
     <author>Alex Levis</author>
     <guid>https://alexlevis.github.io/instrument-precision/</guid>
-    <description><![CDATA[Recently, I was listening to the Casual Inference podcast (Season 3 Episode 10) hosted by Lucy D&rsquo;Agostino McGowan and Ellie Murrary, and a question was raised: does including an instrument in, e.g., a propensity score model, cause bias? I believe the answer to this question, in a general sense, is no. However, such a choice will impact the efficiency of a treatment effect estimator. In this post, I want to review a pair of lemmas from an excellent paper by Rotnitzky &amp; Smucler (2020; JMLR) to formally address this issue.]]></description>
+    <description><![CDATA[Recently, I was listening to the Casual Inference podcast hosted by Lucy D&rsquo;Agostino McGowan and Ellie Murrary, and a question was raised at least a couple of times (Season 3 Episode 10 &amp; Season 4 Episode 9): does adjusting for an instrument (in, e.g., a propensity score model) cause bias? I believe the answer to this question is no, except in extreme scenarios. However, such a choice will impact the efficiency of a treatment effect estimator.]]></description>
 </item>
 <item>
     <title>MGFs, power series, and pushing the expectation through</title>

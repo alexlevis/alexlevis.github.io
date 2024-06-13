@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <title>A note on instruments and precision variables - Alex Levis</title><meta name="Description" content="Welcome!"><meta property="og:title" content="A note on instruments and precision variables" />
-<meta property="og:description" content="Recently, I was listening to the Casual Inference podcast (Season 3 Episode 10) hosted by Lucy D&rsquo;Agostino McGowan and Ellie Murrary, and a question was raised: does including an instrument in, e.g., a propensity score model, cause bias? I believe the answer to this question, in a general sense, is no. However, such a choice will impact the efficiency of a treatment effect estimator. In this post, I want to review a pair of lemmas from an excellent paper by Rotnitzky &amp; Smucler (2020; JMLR) to formally address this issue." />
+<meta property="og:description" content="Recently, I was listening to the Casual Inference podcast hosted by Lucy D&rsquo;Agostino McGowan and Ellie Murrary, and a question was raised at least a couple of times (Season 3 Episode 10 &amp; Season 4 Episode 9): does adjusting for an instrument (in, e.g., a propensity score model) cause bias? I believe the answer to this question is no, except in extreme scenarios. However, such a choice will impact the efficiency of a treatment effect estimator." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://alexlevis.github.io/instrument-precision/" /><meta property="og:image" content="https://alexlevis.github.io/logo.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2024-04-29T00:00:00-04:00" />
@@ -15,7 +15,7 @@
 <meta name="twitter:image" content="https://alexlevis.github.io/logo.png"/>
 
 <meta name="twitter:title" content="A note on instruments and precision variables"/>
-<meta name="twitter:description" content="Recently, I was listening to the Casual Inference podcast (Season 3 Episode 10) hosted by Lucy D&rsquo;Agostino McGowan and Ellie Murrary, and a question was raised: does including an instrument in, e.g., a propensity score model, cause bias? I believe the answer to this question, in a general sense, is no. However, such a choice will impact the efficiency of a treatment effect estimator. In this post, I want to review a pair of lemmas from an excellent paper by Rotnitzky &amp; Smucler (2020; JMLR) to formally address this issue."/>
+<meta name="twitter:description" content="Recently, I was listening to the Casual Inference podcast hosted by Lucy D&rsquo;Agostino McGowan and Ellie Murrary, and a question was raised at least a couple of times (Season 3 Episode 10 &amp; Season 4 Episode 9): does adjusting for an instrument (in, e.g., a propensity score model) cause bias? I believe the answer to this question is no, except in extreme scenarios. However, such a choice will impact the efficiency of a treatment effect estimator."/>
 <meta name="application-name" content="alexlevis.github.io">
 <meta name="apple-mobile-web-app-title" content="alexlevis.github.io"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -30,7 +30,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/alexlevis.github.io\/instrument-precision\/"
-        },"genre": "posts","keywords": "causality","wordcount":  2033 ,
+        },"genre": "posts","keywords": "causality","wordcount":  2329 ,
         "url": "https:\/\/alexlevis.github.io\/instrument-precision\/","datePublished": "2024-04-29T00:00:00-04:00","dateModified": "2024-04-29T00:00:00-04:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -104,8 +104,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">A note on instruments and precision variables</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Alex Levis</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-04-29">2024-04-29</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;2033 words&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;10 minutes&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2024-04-29">2024-04-29</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;2329 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;11 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
@@ -117,17 +117,19 @@
     <li><a href="#the-aipw-estimating-function-and-its-variance">The AIPW estimating function and its variance</a></li>
     <li><a href="#do-not-adjust-for-instruments"><em>Do not</em> adjust for instruments!</a></li>
     <li><a href="#do-adjust-for-precision-variables"><em>Do</em> adjust for precision variables!</a></li>
+    <li><a href="#perfect-predicition-of-treatment">Perfect predicition of treatment</a></li>
     <li><a href="#practical-takeaways">Practical takeaways</a></li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><p>Recently, I was listening to the <a href="https://casualinfer.libsyn.com" target="_blank" rel="noopener noreffer ">Casual Inference</a> podcast (Season 3
-Episode 10) hosted by Lucy D&rsquo;Agostino McGowan and Ellie Murrary, and a
-question was raised: does including an instrument in, e.g., a
-propensity score model, cause bias? I believe the answer to this
-question, in a general sense, is no. However, such a choice will
-impact the <em>efficiency</em> of a treatment effect estimator. In this post,
-I want to review a pair of lemmas from an excellent paper by <a href="https://www.jmlr.org/papers/volume21/19-1026/19-1026.pdf" target="_blank" rel="noopener noreffer ">Rotnitzky
-&amp; Smucler (2020; JMLR)</a> to formally address this issue.</p>
+            </div><div class="content" id="content"><p>Recently, I was listening to the <a href="https://casualinfer.libsyn.com" target="_blank" rel="noopener noreffer ">Casual Inference</a> podcast hosted by
+Lucy D&rsquo;Agostino McGowan and Ellie Murrary, and a question was raised
+at least a couple of times (Season 3 Episode 10 &amp; Season 4 Episode 9):
+does adjusting for an instrument (in, e.g., a propensity score model)
+cause bias? I believe the answer to this question is no, except in
+extreme scenarios. However, such a choice will impact the <em>efficiency</em>
+of a treatment effect estimator. In this post, I want to review a pair
+of lemmas from an excellent paper by <a href="https://www.jmlr.org/papers/volume21/19-1026/19-1026.pdf" target="_blank" rel="noopener noreffer ">Rotnitzky &amp; Smucler (2020; JMLR)</a>
+to formally address this issue.</p>
 <h2 id="graphs-instruments-and-precision-variables">Graphs, Instruments, and Precision Variables</h2>
 <p>Say we are interested in the effect of an exposure, \(A\), on an
 outcome, \(Y\). In order to use to data to estimate the causal effect of
@@ -204,9 +206,17 @@ typical observation is \(O = (\boldsymbol{L}, A, Y)\) or
 three scenarios above, respectively. The estimand of interest, for our
 purposes, will be the population average treatment effect (ATE),
 $\mathbb{E}(Y(1) - Y(0))$&mdash;we will assume for simplicity that the
-exposure is binary, \(A \in \{0,1\}\). In all above scenarios, the ATE
-is identified by the <em>statistical</em> functional \[\chi(\mathbb{P}) =
-\mathbb{E}_{\mathbb{P}}(\mu_1(\boldsymbol{L}) -
+exposure is binary, \(A \in \{0,1\}\).</p>
+<p>To proceed with identification (and consequently to have a hope at
+estimation), we need one crucial <em>positivity</em> assumption. <br />
+<br /></p>
+<p><strong>Assumption (\(*\))</strong>: For any \(\boldsymbol{B} \subseteq O \setminus \{A,
+Y\}\), \(\mathbb{P}[A = 1 \mid \boldsymbol{B}] \in (0,1)\) with
+probability 1.<br />
+<br /></p>
+<p>In all three DAG scenarios presented above, and under Assumption
+(\(*\)), the ATE is identified by the <em>statistical</em> functional
+\[\chi(\mathbb{P}) = \mathbb{E}_{\mathbb{P}}(\mu_1(\boldsymbol{L}) -
 \mu_0(\boldsymbol{L})),\] where \(\mu_a(\boldsymbol{L}) =
 \mathbb{E}_{\mathbb{P}}(Y \mid \boldsymbol{L}, A = a)\); henceforth we
 will suppress dependence on \(\mathbb{P}\) and often omit inputs to
@@ -272,13 +282,13 @@ repeat the above procedure obtain
 estimator \(\widehat{\chi}_{\boldsymbol{B}} =
 \frac{\widehat{\chi}_{\boldsymbol{B}}^{(1)} +
 \widehat{\chi}_{\boldsymbol{B}}^{(2)}}{2}\). Under <em>relatively</em> weak
-and general nonparametric conditions [ one condition begin the
-following: \(\lVert \widehat{\mu}_{a,\boldsymbol{B}} -
-\mu_{a,\boldsymbol{B}} \rVert \cdot \lVert
-\widehat{\pi}_{1,\boldsymbol{B}} - \pi_{1,\boldsymbol{B}} \rVert =
-o_{\mathbb{P}}(n^{-1/2})\) for \(a \in \{0,1\}\), where \(\lVert f
-\rVert^2 = \int f(o)^2 \, d\mathbb{P}(o)\) ], one is able to obtain the
-following asymptotic normality result:
+and general nonparametric conditions [ one condition being a stronger
+positivity assumption, and another being the following: \(\lVert
+\widehat{\mu}_{a,\boldsymbol{B}} - \mu_{a,\boldsymbol{B}} \rVert \cdot
+\lVert \widehat{\pi}_{1,\boldsymbol{B}} - \pi_{1,\boldsymbol{B}}
+\rVert = o_{\mathbb{P}}(n^{-1/2})\) for \(a \in \{0,1\}\), where \(\lVert
+f \rVert^2 = \int f(o)^2 \, d\mathbb{P}(o)\) ], one is able to obtain
+the following asymptotic normality result:
 \[\sqrt{n}\left(\widehat{\chi}_{\boldsymbol{B}} -
 \chi_{\boldsymbol{B}}\right) \overset{d}{\to} \mathcal{N}(0,
 \mathrm{Var}(\phi_{\boldsymbol{B}})).\] Thus, in large samples, for
@@ -395,6 +405,29 @@ assumption, \(\pi_{A,\boldsymbol{L}, \boldsymbol{W}} \equiv
 \end{align*}</p>
 <p>as variance is non-negative. \(\quad \blacksquare\) <br />
 <br /></p>
+<h2 id="perfect-predicition-of-treatment">Perfect predicition of treatment</h2>
+<p>Our discussion thus far has relied on positivity for any given
+adjustment set \(\boldsymbol{B}\), i.e., Assumption (\(*\)). What if this
+assumption holds for \(\boldsymbol{B} = \boldsymbol{L}\), but is
+violated for \(\boldsymbol{B} = (\boldsymbol{L}, \boldsymbol{Z})\)? That
+is, what if we include an instrument (or set of instruments) that
+results in <em>perfect</em> prediction of treatment status for some subgroup:
+\[\mathbb{P}\left[\mathbb{P}[A = 1 \mid \boldsymbol{L},
+\boldsymbol{Z}] \in \{0,1\}\right] &gt; 0.\] Well, unfortunately
+identification breaks down because one of \(\mu_{1, \boldsymbol{L},
+\boldsymbol{Z}}\) or \(\mu_{0, \boldsymbol{L}, \boldsymbol{Z}}\) will not
+be well-defined with some positive probability, therefore
+\(\chi_{\boldsymbol{L}, \boldsymbol{Z}}\) will not be well-defined.</p>
+<p>More realistically, in my opinion, inclusion of very predictive
+instruments may result in practical near-positivity violations, i.e.,
+\(\mathbb{P}[A = 1 \mid \boldsymbol{L}, \boldsymbol{Z}]\) may be very
+close to 0 or 1. If this occurs, our outcome model estimates can
+become unstable when there is little data for one treatment level, and
+moreover the asymptotic variance of \(\widehat{\chi}_{\boldsymbol{L},
+\boldsymbol{Z}}\), \(\mathrm{Var}(\phi_{\boldsymbol{L},
+\boldsymbol{Z}})\), may explode&mdash;as a fun exercise, inspect the
+variance formulas in Lemmas 1 and 2 to get a feel for where exactly
+this manifests.</p>
 <h2 id="practical-takeaways">Practical takeaways</h2>
 <p>In practice, one may not be sure <em>a priori</em> whether a given variable
 is an <em>exact</em> instrument or precision variable. What should one do in
@@ -404,8 +437,13 @@ predictive of exposure), it is clear that these should definitely be
 measured if possible and included in an adjustment set. For putative
 instruments, perhaps one should err on the side of ensuring a valid
 analysis and include covariates that may only be weakly associated
-with the outcome. When one is absolutely sure on the basis of domain
-knowledge, an instrument can be excluded to gain some efficiency.</p>
+with the outcome (after controlling for \(\boldsymbol{L}\) and
+\(A\)). When one is absolutely sure on the basis of domain knowledge, an
+instrument can be excluded to gain some efficiency. Given the
+discussion in the last section, I would emphasize that care should be
+taken when including very strong predictors of treatment (unless they
+are also very strong predictors of the outcome, whereby we would be
+forced to include them as confounders).</p>
 <p>More broadly, the discussion in this note assumes we are in the
 luxurious setting where we measure a sufficient set of confounders of
 the exposure-outcome relationship. Often, one questions whether this
