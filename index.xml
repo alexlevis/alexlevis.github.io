@@ -7,12 +7,12 @@
             <webMaster>alex.w.levis@gmail.com (Alex Levis)</webMaster><lastBuildDate>Mon, 29 Apr 2024 00:00:00 -0400</lastBuildDate>
             <atom:link href="https://alexlevis.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
-    <title>A note on instruments and precision variables</title>
+    <title>To adjust or not to adjust: instruments and precision variables</title>
     <link>https://alexlevis.github.io/instrument-precision/</link>
     <pubDate>Mon, 29 Apr 2024 00:00:00 -0400</pubDate>
     <author>Alex Levis</author>
     <guid>https://alexlevis.github.io/instrument-precision/</guid>
-    <description><![CDATA[Recently, I was listening to the Casual Inference podcast hosted by Lucy D&rsquo;Agostino McGowan and Ellie Murrary, and a question was raised at least a couple of times (Season 3 Episode 10 &amp; Season 4 Episode 9): does adjusting for an instrument (in, e.g., a propensity score model) cause bias? I believe the answer to this question is no, except in extreme scenarios. However, such a choice will impact the efficiency of a treatment effect estimator.]]></description>
+    <description><![CDATA[Recently, I&rsquo;ve been listening to (i.e., binging) the Casual Inference podcast hosted by Lucy D&rsquo;Agostino McGowan and Ellie Murrary, and a question was raised at least a couple of times (Season 3 Episode 10 &amp; Season 4 Episode 9): does adjusting for an instrument (in, e.g., a propensity score model) cause bias? I believe the answer to this question is no, except in somewhat extreme scenarios. However, such a choice will impact the efficiency of a treatment effect estimator.]]></description>
 </item>
 <item>
     <title>MGFs, power series, and pushing the expectation through</title>
