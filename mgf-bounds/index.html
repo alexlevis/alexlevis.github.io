@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
-        <title>MGFs, power series, and pushing the expectation through - Alex Levis</title><meta name="Description" content="Welcome!"><meta property="og:url" content="http://localhost:1313/mgf-bounds/">
+        <title>MGFs, power series, and pushing the expectation through - Alex Levis</title><meta name="Description" content="Welcome!"><meta property="og:url" content="https://alexlevis.github.io/mgf-bounds/">
   <meta property="og:site_name" content="Alex Levis">
   <meta property="og:title" content="MGFs, power series, and pushing the expectation through">
   <meta property="og:description" content="I got stuck on what I thought was a simple point while working through a stats textbook! I figured it out, I think, but was this the most straightforward path to understanding? You tell me! In this note, we explore some oft-used facts about moment-generating functions, and explain a connection with tail and concentration inequalities.
@@ -12,20 +12,19 @@ Overview and my confusion I am currently reading through Martin Wainwright’s H
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2022-08-05T00:00:00-04:00">
-    <meta property="article:modified_time" content="2022-08-05T00:00:00-04:00">
-    <meta property="article:tag" content="Probability">
-    <meta property="og:image" content="http://localhost:1313/logo.png">
+    <meta property="article:published_time" content="2022-08-05T00:00:00-05:00">
+    <meta property="article:modified_time" content="2022-08-05T00:00:00-05:00">
+    <meta property="og:image" content="https://alexlevis.github.io/logo.png">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="http://localhost:1313/logo.png">
+  <meta name="twitter:image" content="https://alexlevis.github.io/logo.png">
   <meta name="twitter:title" content="MGFs, power series, and pushing the expectation through">
   <meta name="twitter:description" content="I got stuck on what I thought was a simple point while working through a stats textbook! I figured it out, I think, but was this the most straightforward path to understanding? You tell me! In this note, we explore some oft-used facts about moment-generating functions, and explain a connection with tail and concentration inequalities.
 Overview and my confusion I am currently reading through Martin Wainwright’s High-dimensional statistics: A non-asymptotic viewpoint, to fill some gaps in my stat theory knowledge.">
 <meta name="application-name" content="alexlevis.github.io">
 <meta name="apple-mobile-web-app-title" content="alexlevis.github.io"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://localhost:1313/mgf-bounds/" /><link rel="next" href="http://localhost:1313/causal-intro/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://alexlevis.github.io/mgf-bounds/" /><link rel="next" href="https://alexlevis.github.io/instrument-precision/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
     {
@@ -35,9 +34,9 @@ Overview and my confusion I am currently reading through Martin Wainwright’s H
         "inLanguage": "en",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "http:\/\/localhost:1313\/mgf-bounds\/"
-        },"genre": "posts","keywords": "probability","wordcount":  2090 ,
-        "url": "http:\/\/localhost:1313\/mgf-bounds\/","datePublished": "2022-08-05T00:00:00-04:00","dateModified": "2022-08-05T00:00:00-04:00","publisher": {
+            "@id": "https:\/\/alexlevis.github.io\/mgf-bounds\/"
+        },"genre": "posts","wordcount":  2090 ,
+        "url": "https:\/\/alexlevis.github.io\/mgf-bounds\/","datePublished": "2022-08-05T00:00:00-05:00","dateModified": "2022-08-05T00:00:00-05:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -379,20 +378,20 @@ everything together, we have \(\mathbb{E}(e^{|t| \cdot |X-\mu|}) &lt;
         <div class="post-info-line">
             <div class="post-info-md"></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="http://localhost:1313/mgf-bounds/"><i class="fab fa-linkedin fa-fw" aria-hidden="true"></i></a></span>
+                <span><a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="https://alexlevis.github.io/mgf-bounds/"><i class="fab fa-linkedin fa-fw" aria-hidden="true"></i></a></span>
             </div>
         </div>
     </div>
 
     <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/probability/">Probability</a></section>
+        <section class="post-tags"></section>
         <section>
             <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
         </section>
     </div>
 
     <div class="post-nav">
-            <a href="/causal-intro/" class="next" rel="next" title="Causality, counterfactuals, confounding">Causality, counterfactuals, confounding<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+            <a href="/instrument-precision/" class="next" rel="next" title="To adjust or not to adjust: instruments and precision variables">To adjust or not to adjust: instruments and precision variables<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
 </div>
 </article></div>
             </main><footer class="footer">

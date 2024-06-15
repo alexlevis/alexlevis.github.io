@@ -2,14 +2,10 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>http://localhost:1313/</loc><lastmod>2024-04-29T00:00:00-04:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>http://localhost:1313/tags/causality/</loc><lastmod>2024-04-29T00:00:00-04:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>http://localhost:1313/posts/</loc><lastmod>2024-04-29T00:00:00-04:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>http://localhost:1313/tags/</loc><lastmod>2024-04-29T00:00:00-04:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>http://localhost:1313/instrument-precision/</loc><lastmod>2024-04-29T00:00:00-04:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>http://localhost:1313/iv-intro/</loc><lastmod>2022-07-19T10:34:49-04:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>http://localhost:1313/causal-intro/</loc><lastmod>2022-08-11T00:00:00-04:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>http://localhost:1313/mgf-bounds/</loc><lastmod>2022-08-05T00:00:00-04:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>http://localhost:1313/tags/probability/</loc><lastmod>2022-08-05T00:00:00-04:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>http://localhost:1313/about/</loc><lastmod>2022-07-19T10:34:49-04:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>http://localhost:1313/categories/</loc><changefreq>weekly</changefreq><priority>0.5</priority></url></urlset>
+            <loc>https://alexlevis.github.io/</loc><lastmod>2024-04-29T00:00:00-05:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://alexlevis.github.io/posts/</loc><lastmod>2024-04-29T00:00:00-05:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://alexlevis.github.io/instrument-precision/</loc><lastmod>2024-04-29T00:00:00-05:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://alexlevis.github.io/mgf-bounds/</loc><lastmod>2022-08-05T00:00:00-05:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://alexlevis.github.io/about/</loc><lastmod>2022-07-19T10:34:49-04:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://alexlevis.github.io/categories/</loc><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://alexlevis.github.io/tags/</loc><changefreq>weekly</changefreq><priority>0.5</priority></url></urlset>
