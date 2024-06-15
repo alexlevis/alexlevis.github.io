@@ -1,0 +1,24 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Tags - Tag - Alex Levis</title>
+        <link>http://localhost:1313/tags/</link>
+        <description>Tags - Tag - Alex Levis</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>alex.w.levis@gmail.com (Alex Levis)</managingEditor>
+            <webMaster>alex.w.levis@gmail.com (Alex Levis)</webMaster><lastBuildDate>Mon, 29 Apr 2024 00:00:00 -0400</lastBuildDate><atom:link href="http://localhost:1313/tags/" rel="self" type="application/rss+xml" /><item>
+    <title>Causality</title>
+    <link>http://localhost:1313/tags/causality/</link>
+    <pubDate>Mon, 29 Apr 2024 00:00:00 -0400</pubDate>
+    <author>Alex Levis</author>
+    <guid>http://localhost:1313/tags/causality/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>Probability</title>
+    <link>http://localhost:1313/tags/probability/</link>
+    <pubDate>Fri, 05 Aug 2022 00:00:00 -0400</pubDate>
+    <author>Alex Levis</author>
+    <guid>http://localhost:1313/tags/probability/</guid>
+    <description><![CDATA[]]></description>
+</item>
+</channel>
+</rss>

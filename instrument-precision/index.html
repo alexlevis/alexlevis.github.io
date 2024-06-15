@@ -1,25 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
-        <title>To adjust or not to adjust: instruments and precision variables - Alex Levis</title><meta name="Description" content="Welcome!"><meta property="og:title" content="To adjust or not to adjust: instruments and precision variables" />
-<meta property="og:description" content="Recently, I&rsquo;ve been listening to (i.e., binging) the Casual Inference podcast hosted by Lucy D&rsquo;Agostino McGowan and Ellie Murrary, and a question was raised at least a couple of times (Season 3 Episode 10 &amp; Season 4 Episode 9): does adjusting for an instrument (in, e.g., a propensity score model) cause bias? I believe the answer to this question is no, except in somewhat extreme scenarios. However, such a choice will impact the efficiency of a treatment effect estimator." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://alexlevis.github.io/instrument-precision/" /><meta property="og:image" content="https://alexlevis.github.io/logo.png"/><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2024-04-29T00:00:00-04:00" />
-<meta property="article:modified_time" content="2024-04-29T00:00:00-04:00" /><meta property="og:site_name" content="alexlevis.github.io" />
+        <title>To adjust or not to adjust: instruments and precision variables - Alex Levis</title><meta name="Description" content="Welcome!"><meta property="og:url" content="http://localhost:1313/instrument-precision/">
+  <meta property="og:site_name" content="Alex Levis">
+  <meta property="og:title" content="To adjust or not to adjust: instruments and precision variables">
+  <meta property="og:description" content="Recently, I’ve been listening to (i.e., binging) the Casual Inference podcast hosted by Lucy D’Agostino McGowan and Ellie Murrary, and a question was raised at least a couple of times (Season 3 Episode 10 &amp; Season 4 Episode 9): does adjusting for an instrument (in, e.g., a propensity score model) cause bias? I believe the answer to this question is no, except in somewhat extreme scenarios. However, such a choice will impact the efficiency of a treatment effect estimator.">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-04-29T00:00:00-04:00">
+    <meta property="article:modified_time" content="2024-04-29T00:00:00-04:00">
+    <meta property="article:tag" content="Causality">
+    <meta property="og:image" content="http://localhost:1313/logo.png">
 
-<meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="https://alexlevis.github.io/logo.png"/>
-
-<meta name="twitter:title" content="To adjust or not to adjust: instruments and precision variables"/>
-<meta name="twitter:description" content="Recently, I&rsquo;ve been listening to (i.e., binging) the Casual Inference podcast hosted by Lucy D&rsquo;Agostino McGowan and Ellie Murrary, and a question was raised at least a couple of times (Season 3 Episode 10 &amp; Season 4 Episode 9): does adjusting for an instrument (in, e.g., a propensity score model) cause bias? I believe the answer to this question is no, except in somewhat extreme scenarios. However, such a choice will impact the efficiency of a treatment effect estimator."/>
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="http://localhost:1313/logo.png">
+  <meta name="twitter:title" content="To adjust or not to adjust: instruments and precision variables">
+  <meta name="twitter:description" content="Recently, I’ve been listening to (i.e., binging) the Casual Inference podcast hosted by Lucy D’Agostino McGowan and Ellie Murrary, and a question was raised at least a couple of times (Season 3 Episode 10 &amp; Season 4 Episode 9): does adjusting for an instrument (in, e.g., a propensity score model) cause bias? I believe the answer to this question is no, except in somewhat extreme scenarios. However, such a choice will impact the efficiency of a treatment effect estimator.">
 <meta name="application-name" content="alexlevis.github.io">
 <meta name="apple-mobile-web-app-title" content="alexlevis.github.io"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://alexlevis.github.io/instrument-precision/" /><link rel="prev" href="https://alexlevis.github.io/mgf-bounds/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://localhost:1313/instrument-precision/" /><link rel="prev" href="http://localhost:1313/iv-intro/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
     {
@@ -29,9 +33,9 @@
         "inLanguage": "en",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https:\/\/alexlevis.github.io\/instrument-precision\/"
+            "@id": "http:\/\/localhost:1313\/instrument-precision\/"
         },"genre": "posts","keywords": "causality","wordcount":  2333 ,
-        "url": "https:\/\/alexlevis.github.io\/instrument-precision\/","datePublished": "2024-04-29T00:00:00-04:00","dateModified": "2024-04-29T00:00:00-04:00","publisher": {
+        "url": "http:\/\/localhost:1313\/instrument-precision\/","datePublished": "2024-04-29T00:00:00-04:00","dateModified": "2024-04-29T00:00:00-04:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -47,7 +51,7 @@
             <a href="/" title="Alex Levis">Alex Levis</a>
         </div>
         <div class="menu">
-            <div class="menu-inner"><a class="menu-item" href="/about/"><i class="fas fa-user"></i> About </a><a class="menu-item" href="/posts/"><i class="fas fa-pen-square"></i> Posts </a><a class="menu-item" href="/tags/"><i class="fas fa-tags"></i> Tags </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+            <div class="menu-inner"><a class="menu-item" href="/about/"><i class="fas fa-user"></i> About </a><a class="menu-item" href="/posts/"><i class="fas fa-pen-square"></i> Posts </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
                         <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
                         <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
                             <i class="fas fa-search fa-fw" aria-hidden="true"></i>
@@ -89,7 +93,7 @@
                     <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
                         Cancel
                     </a>
-                </div><a class="menu-item" href="/about/" title=""><i class="fas fa-user"></i>About</a><a class="menu-item" href="/posts/" title=""><i class="fas fa-pen-square"></i>Posts</a><a class="menu-item" href="/tags/" title=""><i class="fas fa-tags"></i>Tags</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                </div><a class="menu-item" href="/about/" title=""><i class="fas fa-user"></i>About</a><a class="menu-item" href="/posts/" title=""><i class="fas fa-pen-square"></i>Posts</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
                 <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
             </a></div>
     </div>
@@ -140,9 +144,9 @@ common causes of \(A\) on \(Y\). Graphically, we can represent these
 relationships on a causal directed acyclic graph (DAG):</p>
 <p><a id="figure--fig:confounding-dag"></a></p>
 <figure><img src="/images/confounding-dag.png"
-         alt="Figure 1: Canonical observational study DAG"/><figcaption>
-            <p><span class="figure-number">Figure 1: </span>Canonical observational study DAG</p>
-        </figcaption>
+    alt="Figure 1: Canonical observational study DAG"><figcaption>
+      <p><span class="figure-number">Figure 1: </span>Canonical observational study DAG</p>
+    </figcaption>
 </figure>
 
 <p>The DAG in Figure 1 encodes the assumption that, within levels of
@@ -170,9 +174,9 @@ exposure. In this context, we will say \(Z\) is an instrument if it
 causes \(A\) but only has an effect on \(Y\) through \(A\): in DAG form,</p>
 <p><a id="figure--fig:instrument-dag"></a></p>
 <figure><img src="/images/instrument-dag.png"
-         alt="Figure 2: Observational study with an instrument"/><figcaption>
-            <p><span class="figure-number">Figure 2: </span>Observational study with an instrument</p>
-        </figcaption>
+    alt="Figure 2: Observational study with an instrument"><figcaption>
+      <p><span class="figure-number">Figure 2: </span>Observational study with an instrument</p>
+    </figcaption>
 </figure>
 
 <p>Note that I use the two-sided arrow (\(\leftrightarrow\)) between
@@ -184,9 +188,9 @@ directly affects \(Y\), but is only associated with \(A\) through
 associations with \(\boldsymbol{L}\):</p>
 <p><a id="figure--fig:precision-dag"></a></p>
 <figure><img src="/images/precision-dag.png"
-         alt="Figure 3: Observational study with a precision variable"/><figcaption>
-            <p><span class="figure-number">Figure 3: </span>Observational study with a precision variable</p>
-        </figcaption>
+    alt="Figure 3: Observational study with a precision variable"><figcaption>
+      <p><span class="figure-number">Figure 3: </span>Observational study with a precision variable</p>
+    </figcaption>
 </figure>
 
 <p>In these alternative scenarios, we are left with multiple valid
@@ -469,23 +473,23 @@ Smucler</a>.</p>
         <div class="post-info-line">
             <div class="post-info-md"></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="https://alexlevis.github.io/instrument-precision/"><i class="fab fa-linkedin fa-fw" aria-hidden="true"></i></a></span>
+                <span><a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="http://localhost:1313/instrument-precision/"><i class="fab fa-linkedin fa-fw" aria-hidden="true"></i></a></span>
             </div>
         </div>
     </div>
 
     <div class="post-info-more">
-        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/causality/">causality</a></section>
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/causality/">Causality</a></section>
         <section>
             <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
         </section>
     </div>
 
-    <div class="post-nav"><a href="/mgf-bounds/" class="prev" rel="prev" title="MGFs, power series, and pushing the expectation through"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>MGFs, power series, and pushing the expectation through</a></div>
+    <div class="post-nav"><a href="/iv-intro/" class="prev" rel="prev" title="An introduction to instrumental variables"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>An introduction to instrumental variables</a></div>
 </div>
 </article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.101.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.127.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
                 </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2019 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Alex Levis</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>
