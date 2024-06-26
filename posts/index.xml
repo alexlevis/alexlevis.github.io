@@ -15,7 +15,7 @@
 <item>
     <title>MGFs, power series, and pushing the expectation through</title>
     <link>https://alexlevis.github.io/mgf-bounds/</link>
-    <pubDate>Fri, 05 Aug 2022 00:00:00 -0500</pubDate>
+    <pubDate>Fri, 05 Aug 2022 00:00:00 -0400</pubDate>
     <author>Alex Levis</author>
     <guid>https://alexlevis.github.io/mgf-bounds/</guid>
     <description><![CDATA[I got stuck on what I thought was a simple point while working through a stats textbook! I figured it out, I think, but was this the most straightforward path to understanding? You tell me! In this note, we explore some oft-used facts about moment-generating functions, and explain a connection with tail and concentration inequalities.
