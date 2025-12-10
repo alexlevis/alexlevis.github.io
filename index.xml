@@ -3,8 +3,7 @@
         <title>Alex Levis</title>
         <link>https://alexlevis.github.io/</link>
         <description>Welcome!</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>alex.w.levis@gmail.com (Alex Levis)</managingEditor>
-            <webMaster>alex.w.levis@gmail.com (Alex Levis)</webMaster><lastBuildDate>Fri, 01 Aug 2025 00:00:00 &#43;0000</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 01 Aug 2025 00:00:00 &#43;0000</lastBuildDate>
             <atom:link href="https://alexlevis.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
     <title>To adjust or not to adjust: instruments and precision variables</title>
@@ -12,7 +11,16 @@
     <pubDate>Mon, 29 Apr 2024 00:00:00 -0500</pubDate>
     <author>Alex Levis</author>
     <guid>https://alexlevis.github.io/instrument-precision/</guid>
-    <description><![CDATA[Recently, I&rsquo;ve been listening to (i.e., binging) the Casual Inference podcast hosted by Lucy D&rsquo;Agostino McGowan and Ellie Murrary, and a question was raised at least a couple of times (Season 3 Episode 10 &amp; Season 4 Episode 9): does adjusting for an instrument (in, e.g., a propensity score model) cause bias? I believe the answer to this question is no, except in somewhat extreme scenarios. However, such a choice will impact the efficiency of a treatment effect estimator.]]></description>
+    <description><![CDATA[<p>Recently, I&rsquo;ve been listening to (i.e., binging) the <a href="https://casualinfer.libsyn.com" target="_blank" rel="noopener noreffer ">Casual Inference</a>
+podcast hosted by Lucy D&rsquo;Agostino McGowan and Ellie Murrary, and a
+question was raised at least a couple of times (Season 3 Episode 10 &amp;
+Season 4 Episode 9): does adjusting for an instrument (in, e.g., a
+propensity score model) cause bias? I believe the answer to this
+question is no, except in somewhat extreme scenarios. However, such a
+choice will impact the <em>efficiency</em> of a treatment effect
+estimator. In this post, I want to review a pair of lemmas from an
+excellent paper by <a href="https://www.jmlr.org/papers/volume21/19-1026/19-1026.pdf" target="_blank" rel="noopener noreffer ">Rotnitzky &amp; Smucler (2020; JMLR)</a> to formally
+address this and related issues.</p>]]></description>
 </item>
 <item>
     <title>MGFs, power series, and pushing the expectation through</title>
@@ -20,8 +28,18 @@
     <pubDate>Fri, 05 Aug 2022 00:00:00 -0400</pubDate>
     <author>Alex Levis</author>
     <guid>https://alexlevis.github.io/mgf-bounds/</guid>
-    <description><![CDATA[I got stuck on what I thought was a simple point while working through a stats textbook! I figured it out, I think, but was this the most straightforward path to understanding? You tell me! In this note, we explore some oft-used facts about moment-generating functions, and explain a connection with tail and concentration inequalities.
-Overview and my confusion I am currently reading through Martin Wainwright&rsquo;s High-dimensional statistics: A non-asymptotic viewpoint, to fill some gaps in my stat theory knowledge.]]></description>
+    <description><![CDATA[<p>I got stuck on what I thought was a simple point while working through
+a stats textbook! I figured it out, I think, but was this the most
+straightforward path to understanding?  You tell me! In this note, we
+explore some oft-used facts about moment-generating functions, and
+explain a connection with tail and concentration inequalities.</p>
+<h2 id="overview-and-my-confusion">Overview and my confusion</h2>
+<p>I am currently reading through <a href="https://people.eecs.berkeley.edu/~wainwrig/" target="_blank" rel="noopener noreffer ">Martin Wainwright</a>&rsquo;s <em><a href="https://www.amazon.com/High-Dimensional-Statistics-Non-Asymptotic-Statistical-Probabilistic-ebook/dp/B07N46XF8B" target="_blank" rel="noopener noreffer ">High-dimensional
+statistics: A non-asymptotic viewpoint</a></em>, to fill some gaps in my stat
+theory knowledge. While I&rsquo;m only partway through, I can definitely
+already recommend this book for those wanting to get familiar with
+some of the modern theoretical machinery needed to validate
+statistical methods that we use on difficult problems!</p>]]></description>
 </item>
 </channel>
 </rss>
